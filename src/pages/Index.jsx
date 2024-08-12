@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Search, ExternalLink, ThumbsUp } from "lucide-react";
+import { Search, ExternalLink, ThumbsUp } from "lucide-react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
