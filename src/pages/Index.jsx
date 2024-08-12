@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Search, ExternalLink, ThumbsUp } from "lucide-react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -32,9 +34,7 @@ const Index = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full p-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <svg className="absolute top-1/2 right-4 transform -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 16.65z" />
-          </svg>
+          <Search className="absolute top-1/2 right-4 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
         </div>
         {loading ? (
           <Skeleton count={10} height={50} className="mb-6" />
@@ -51,15 +51,21 @@ const Index = () => {
                   {story.title}
                 </a>
               </h2>
-              <p className="text-gray-600 mb-3">Upvotes: {story.points}</p>
-              <a
-                href={story.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700 transition-colors duration-300"
-              >
-                Read more
-              </a>
+              <div className="flex items-center text-gray-600 mb-3">
+                <ThumbsUp className="h-5 w-5 mr-2" />
+                <span>{story.points}</span>
+              </div>
+              <div className="flex items-center">
+                <ExternalLink className="h-5 w-5 mr-2 text-blue-500" />
+                <a
+                  href={story.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700 transition-colors duration-300"
+                >
+                  Read more
+                </a>
+              </div>
             </div>
           ))
         )}
