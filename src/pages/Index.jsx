@@ -36,7 +36,16 @@ const Index = () => {
         ) : (
           filteredStories.map((story) => (
             <div key={story.objectID} className="p-5 mb-6 bg-gray-100 rounded-lg shadow-md border border-gray-300">
-              <h2 className="text-xl font-semibold mb-2">{story.title}</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                <a
+                  href={story.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  {story.title}
+                </a>
+              </h2>
               <p className="text-gray-700 mb-2">Upvotes: {story.points}</p>
               <a
                 href={story.url}
