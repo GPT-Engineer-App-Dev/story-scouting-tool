@@ -50,20 +50,22 @@ const Index = () => {
                   {story.title}
                 </a>
               </h2>
-              <div className="flex items-center text-gray-600 mb-3">
-                <ThumbsUp className="h-5 w-5 mr-2" />
-                <span>{story.points}</span>
-              </div>
-              <div className="flex items-center">
-                <ExternalLink className="h-5 w-5 mr-2 text-blue-500" />
-                <a
-                  href={story.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-700 transition-colors duration-300"
-                >
-                  Read more
-                </a>
+              <div className="flex items-center justify-between text-gray-600">
+                <div className="flex items-center">
+                  <ThumbsUp className="h-5 w-5 mr-2" />
+                  <span>{story.points}</span>
+                </div>
+                <div className="flex items-center">
+                  <ExternalLink className="h-5 w-5 mr-2 text-blue-500" />
+                  <a
+                    href={story.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-700 transition-colors duration-300"
+                  >
+                    Read more
+                  </a>
+                </div>
               </div>
             </div>
           ))
